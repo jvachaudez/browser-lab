@@ -1,0 +1,66 @@
+version: 1
+title: Premiers pas sur le Web
+startUrl: training://atelier/index.html
+steps:
+  - instruction: "Écris training://atelier/encyclopedie.html dans la barre d’adresse et appuie sur Entrée."
+    hint: "La barre d’adresse se trouve en haut. Ctrl+L permet aussi de la sélectionner."
+    success: "Tu sais ouvrir une page à partir de son adresse."
+    validation:
+      type: url_equals
+      value: training://atelier/encyclopedie.html
+  - instruction: "Clique sur le lien Belgique dans l’encyclopédie."
+    hint: "Un lien est un texte cliquable. Cherche la carte Belgique."
+    success: "Un lien permet de passer d’une page à une autre."
+    validation:
+      type: url_equals
+      value: training://atelier/belgique.html
+  - instruction: "Reviens à la page précédente avec la flèche de gauche."
+    hint: "Le bouton Précédent se trouve à gauche de la barre d’adresse."
+    success: "Précédent revient dans l’historique de cet onglet."
+    validation:
+      type: browser_action
+      action: back
+  - instruction: "Retourne sur la page Belgique avec la flèche de droite."
+    hint: "Suivant fonctionne après un retour à la page précédente."
+    success: "Suivant permet de retrouver la page que tu viens de quitter."
+    validation:
+      type: browser_action
+      action: forward
+  - instruction: "Actualise la page avec le bouton ↻."
+    hint: "Tu peux aussi utiliser Ctrl+R."
+    success: "Actualiser recharge le contenu de la page."
+    validation:
+      type: browser_action
+      action: reload
+  - instruction: "Ajoute la page Belgique à tes favoris en cliquant sur l’étoile."
+    hint: "L’étoile se trouve à droite de la barre d’adresse."
+    success: "Un favori permet de retrouver facilement une adresse."
+    validation:
+      type: browser_action
+      action: bookmark
+  - instruction: "Cherche le mot Bruxelles dans la page avec Ctrl+F."
+    hint: "Saisis Bruxelles dans le champ qui apparaît, puis appuie sur Entrée."
+    success: "La recherche dans la page retrouve un mot dans le document affiché."
+    validation:
+      type: browser_action
+      action: find_in_page
+      value: Bruxelles
+  - instruction: "Ouvre un nouvel onglet avec le bouton +."
+    hint: "Tu peux aussi utiliser Ctrl+T."
+    success: "Un onglet permet de garder plusieurs pages ouvertes."
+    validation:
+      type: browser_action
+      action: new_tab
+  - instruction: "Effectue une recherche sur l’Atomium depuis la barre d’adresse."
+    hint: "Écris Atomium, sans adresse, et appuie sur Entrée. Le moteur d’entraînement s’ouvrira."
+    success: "La barre d’adresse accepte aussi des mots à rechercher."
+    validation:
+      type: browser_action
+      action: search
+      value: Atomium
+  - instruction: "Clique sur le résultat consacré à l’Atomium."
+    hint: "Le résultat pertinent correspond au sujet que tu as cherché."
+    success: "Tu as terminé ton premier parcours. À toi d’explorer !"
+    validation:
+      type: url_equals
+      value: training://atelier/atomium.html
